@@ -1,18 +1,34 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+// import { createClient } from './neon'
+import { sql } from '@vercel/postgres'
+import {
+  drizzle as postgresJsDrizzle,
+  type PostgresJsDatabase,
+} from 'drizzle-orm/postgres-js'
+import {
+  drizzle as vercelDrizzle,
+  type VercelPgDatabase,
+} from 'drizzle-orm/vercel-postgres'
+import postgres from 'postgres'
 
-import { env } from "~/env";
-import * as schema from "./schema";
+import { env } from '~/env'
 
-/**
- * Cache the database connection in development. This avoids creating a new connection on every HMR
- * update.
- */
-const globalForDb = globalThis as unknown as {
-  conn: postgres.Sql | undefined;
-};
+import * as schema from './schema'
 
-const conn = globalForDb.conn ?? postgres(env.DATABASE_URL);
-if (env.NODE_ENV !== "production") globalForDb.conn = conn;
+// export const dynamic = 'force-dynamic'
 
-export const db = drizzle(conn, { schema });
+// const sql = createClient({
+//   connectionString: process.env.POSTGRES_URL,
+// })
+
+// export const db = vercelDrizzle({ client: sql, schema, logger: true })
+
+export let db:
+  | PostgresJsDatabase<typeof schema>
+  | VercelPgDatabase<typeof schema>
+
+if (env.NODE_ENV === 'development') {
+  const sql = postgres(env.POSTGRES_URL!)
+  db = postgresJsDrizzle({ client: sql, schema, logger: true })
+} else if (env.NODE_ENV === 'test' || env.NODE_ENV === 'production') {
+  db = vercelDrizzle({ client: sql, schema, logger: true })
+}

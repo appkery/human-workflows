@@ -1,0 +1,60 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: development server side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+    },
+    {
+      "name": "Next.js: development client side",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "Next.js: development full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithEdge"
+      }
+    },
+    {
+      "name": "Next.js: preview server side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "Next.js: preview client side",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "Next.js: preview full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithEdge"
+      },
+      "env": {
+        "NODE_ENV": "test"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Human Workflows",
+  "short_name": "Human Workflows",
+  "description": "Human Workflows",
+  "shortcuts": [
+    {
+      "name": "블로그",
+      "short_name": "블로그",
+      "description": "블로그",
+      "url": "/blogs",
+      "icons": [
+        {
+          "src": "/android-chrome-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop/front.png",
+      "sizes": "3840x2144",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Human Workflows Desktop Front Page"
+    },
+    {
+      "src": "/screenshots/iPhone-14-pro-max/front.png",
+      "sizes": "1290x2796",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Human Workflows Mobile Front Page"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "orientation": "portrait",
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "/newEmail?to=%s"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.app1",
+      "id": "com.example.app1"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/app/example-app1/id123456789"
+    },
+    {
+      "platform": "windows",
+      "url": "https://apps.microsoft.com/store/detail/example-app1/id123456789"
+    }
+  ],
+  "iarc_rating_id": "앱 등록 시 발급 받는 IARC 등급 ID"
+}
