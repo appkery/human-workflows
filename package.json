@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.7.2",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.1.5",
     "@lexical/code": "^0.18.0",
     "@lexical/link": "^0.18.0",
     "@lexical/list": "^0.18.0",
@@ -25,12 +27,14 @@
     "@lexical/selection": "^0.18.0",
     "@lexical/table": "^0.18.0",
     "@lexical/utils": "^0.18.0",
-    "@mui/base": "5.0.0-beta.60",
     "@neondatabase/serverless": "^0.10.1",
     "@next/env": "^14.2.16",
     "@serwist/next": "^9.0.9",
     "@t3-oss/env-nextjs": "^0.11.1",
+    "@tailwindcss/forms": "^0.5.9",
     "@tanstack/react-query": "^5.59.16",
+    "@tanstack/react-table": "^8.20.5",
+    "@tanstack/react-virtual": "^3.10.8",
     "@trpc/client": "11.0.0-rc.593",
     "@trpc/react-query": "11.0.0-rc.593",
     "@trpc/server": "11.0.0-rc.593",
@@ -38,6 +42,7 @@
     "@vercel/postgres": "^0.10.0",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
+    "d3": "^7.9.0",
     "date-fns": "^4.1.0",
     "drizzle-orm": "^0.35.3",
     "drizzle-zod": "^0.5.1",
@@ -50,6 +55,7 @@
     "postgres": "^3.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "recoil": "^0.7.7",
     "server-only": "^0.0.1",
     "sharp": "^0.33.5",
     "superjson": "^2.2.1",
@@ -60,6 +66,7 @@
     "@eslint/js": "^9.13.0",
     "@faker-js/faker": "^9.1.0",
     "@types/bcrypt": "^5.0.2",
+    "@types/d3": "^7.4.3",
     "@types/eslint": "^9.6.1",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.8.1",
@@ -84,6 +91,7 @@
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.11.0"
   },
+  "packageManager": "pnpm@9.12.3+sha256.24235772cc4ac82a62627cd47f834c72667a2ce87799a846ec4e8e555e2d4b8b",
   "ct3aMetadata": {
     "initVersion": "7.37.0"
   }

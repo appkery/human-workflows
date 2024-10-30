@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { LatestPost } from "~/app/_components/post";
-import { auth } from "~/server/api/auth";
 import { api, HydrateClient } from "~/libs/trpc/server";
+import { auth } from "~/server/api/auth";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });

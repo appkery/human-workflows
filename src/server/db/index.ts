@@ -27,7 +27,7 @@ export let db:
   | VercelPgDatabase<typeof schema>
 
 if (env.NODE_ENV === 'development') {
-  const sql = postgres(env.POSTGRES_URL!)
+  const sql = postgres(env.POSTGRES_URL)
   db = postgresJsDrizzle({ client: sql, schema, logger: true })
 } else if (env.NODE_ENV === 'test' || env.NODE_ENV === 'production') {
   db = vercelDrizzle({ client: sql, schema, logger: true })
