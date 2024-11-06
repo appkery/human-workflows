@@ -55,36 +55,6 @@ export default function SignUp() {
                 </div>
               </form>
             </div>
-
-            <div>
-              <div className='relative mt-10'>
-                <div
-                  className='absolute inset-0 flex items-center'
-                  aria-hidden='true'>
-                  <div className='w-full border-t border-gray-200' />
-                </div>
-                <div className='relative flex justify-center text-sm font-medium leading-6'>
-                  <span className='bg-white px-6 text-gray-900'>또는</span>
-                </div>
-              </div>
-
-              <div className='mt-6 grid gap-4'>
-                <button
-                  className='flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent'
-                  onClick={() => signIn('naver', { callbackUrl: '/admin' })}>
-                  <Image
-                    src='/images/logos/naver-login.png'
-                    alt='네이버 회원가입'
-                    className='h-5 w-5'
-                    width={20}
-                    height={20}
-                  />
-                  <span className='text-sm font-semibold leading-6'>
-                    네이버 회원가입
-                  </span>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

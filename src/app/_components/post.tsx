@@ -7,8 +7,6 @@ import Comments from '~/app/_components/comments'
 import Textarea from '~/app/_components/textarea'
 import { api } from '~/libs/trpc/react'
 
-import TanstackTable from './tanstackTable'
-
 export default function Post({
   userId,
   postDate,
@@ -35,11 +33,6 @@ export default function Post({
 
   return (
     <>
-      <TanstackTable
-        isEditable={isEditable}
-        userId={userId}
-        postDate={postDate[0]}
-      />
       <Textarea
         buttonLabel='Post'
         isEditable={isEditable}

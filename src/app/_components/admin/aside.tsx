@@ -1,7 +1,8 @@
 'use client'
 
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react'
 import {
+  Cog6ToothIcon,
   DocumentDuplicateIcon,
   HomeIcon,
   XMarkIcon,
@@ -38,21 +39,22 @@ export default function Aside({ children }: { children: ReactNode }) {
   const user = session?.user
 
   const navigation = [
+    { name: '새 워크플로우', href: '/admin', icon: HomeIcon, current: true },
     { name: '대시보드', href: '/admin', icon: HomeIcon, current: true },
     {
-      name: '내 블로그',
+      name: '조직도',
       href: `/admin/blogs/${user?.id}`,
       icon: DocumentDuplicateIcon,
       current: false,
     },
     {
-      name: '구독 블로그',
+      name: '워크플로우',
       href: '/admin/blogs',
       icon: DocumentDuplicateIcon,
       current: false,
     },
     {
-      name: '내 구독자',
+      name: '내 워크플로우',
       href: '/admin/blogs',
       icon: DocumentDuplicateIcon,
       current: false,
@@ -64,12 +66,12 @@ export default function Aside({ children }: { children: ReactNode }) {
   return (
     <SidebarContext.Provider value={{ sidebarOpen, setSidebarOpen }}>
       {/* Sidebar for mobile */}
-      <Transition.Root show={sidebarOpen} as={Fragment}>
+      <Transition show={sidebarOpen} as={Fragment}>
         <Dialog
           as='div'
           className='relative z-50 lg:hidden'
           onClose={setSidebarOpen}>
-          <Transition.Child
+          <TransitionChild
             as={Fragment}
             enter='transition-opacity ease-linear duration-300'
             enterFrom='opacity-0'
@@ -78,10 +80,10 @@ export default function Aside({ children }: { children: ReactNode }) {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'>
             <div className='fixed inset-0 bg-gray-900/80' />
-          </Transition.Child>
+          </TransitionChild>
 
           <div className='fixed inset-0 flex'>
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter='transition ease-in-out duration-300 transform'
               enterFrom='-translate-x-full'
@@ -89,8 +91,8 @@ export default function Aside({ children }: { children: ReactNode }) {
               leave='transition ease-in-out duration-300 transform'
               leaveFrom='translate-x-0'
               leaveTo='-translate-x-full'>
-              <Dialog.Panel className='relative mr-16 flex w-full max-w-xs flex-1'>
-                <Transition.Child
+              <DialogPanel className='relative mr-16 flex w-full max-w-xs flex-1'>
+                <TransitionChild
                   as={Fragment}
                   enter='ease-in-out duration-300'
                   enterFrom='opacity-0'
@@ -110,7 +112,7 @@ export default function Aside({ children }: { children: ReactNode }) {
                       />
                     </button>
                   </div>
-                </Transition.Child>
+                </TransitionChild>
                 {/* Sidebar component, swap this element with another sidebar if you like */}
                 <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4'>
                   <Link
@@ -155,7 +157,7 @@ export default function Aside({ children }: { children: ReactNode }) {
                           ))}
                         </ul>
                       </li>
-                      {/* <li className='mt-auto'>
+                      <li className='mt-auto'>
                         <Link
                           href='/admin/settings'
                           className='group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600'
@@ -166,15 +168,15 @@ export default function Aside({ children }: { children: ReactNode }) {
                           />
                           Settings
                         </Link>
-                      </li> */}
+                      </li>
                     </ul>
                   </nav>
                 </div>
-              </Dialog.Panel>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </div>
         </Dialog>
-      </Transition.Root>
+      </Transition>
 
       {/* Static sidebar for desktop */}
       <div className='hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col'>
@@ -222,7 +224,7 @@ export default function Aside({ children }: { children: ReactNode }) {
                   ))}
                 </ul>
               </li>
-              {/* <li className='mt-auto'>
+              <li className='mt-auto'>
                 <Link
                   href='/admin/settings'
                   className='group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600'
@@ -233,7 +235,7 @@ export default function Aside({ children }: { children: ReactNode }) {
                   />
                   Settings
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </nav>
         </div>

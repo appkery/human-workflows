@@ -14,7 +14,7 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 
-const navigation = [{ name: '블로그', href: '/blogs', current: false }]
+// const navigation = [{ name: '블로그', href: '/blogs', current: false }]
 
 export default function SignedOut() {
   return (
@@ -45,7 +45,7 @@ export default function SignedOut() {
                       />
                     </Link>
                   </div>
-                  <div className='hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8'>
+                  {/* <div className='hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8'>
                     {navigation.map(item => (
                       <Link
                         key={item.name}
@@ -61,7 +61,7 @@ export default function SignedOut() {
                         {item.name}
                       </Link>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
                 {/* Profile dropdown */}
                 <div className='hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8'>
@@ -101,7 +101,7 @@ export default function SignedOut() {
 
             {/* Mobile menu */}
             <Disclosure.Panel className='sm:hidden'>
-              <div className='space-y-1 pb-3 pt-2'>
+              {/* <div className='space-y-1 pb-3 pt-2'>
                 {navigation.map(item => (
                   <Disclosure.Button
                     key={item.name}
@@ -117,7 +117,7 @@ export default function SignedOut() {
                     {item.name}
                   </Disclosure.Button>
                 ))}
-              </div>
+              </div> */}
               <div className='border-t border-gray-200 pb-3 pt-4'>
                 <div className='space-y-1'>
                   <Disclosure.Button

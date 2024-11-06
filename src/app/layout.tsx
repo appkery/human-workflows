@@ -7,9 +7,9 @@ import { SessionProvider } from 'next-auth/react'
 import { TRPCReactProvider } from '~/libs/trpc/react'
 
 const APP_NAME = 'PWA App'
-const APP_DEFAULT_TITLE = '트레이딩 블로그'
+const APP_DEFAULT_TITLE = '휴먼 워크플로우'
 const APP_TITLE_TEMPLATE = '%s'
-const APP_DESCRIPTION = '트레이딩 블로그'
+const APP_DESCRIPTION = '휴먼 워크플로우'
 
 export const metadata = {
   applicationName: APP_NAME,

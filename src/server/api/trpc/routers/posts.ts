@@ -1,10 +1,7 @@
 import { and, desc, eq, lt, or } from 'drizzle-orm'
 import { z } from 'zod'
 
-import {
-  createTRPCRouter,
-  publicProcedure,
-} from '~/server/api/trpc'
+import { createTRPCRouter, publicProcedure } from '~/server/api/trpc'
 import { posts, users } from '~/server/db/schema'
 
 export const postRouter = createTRPCRouter({
@@ -77,9 +74,6 @@ export const postRouter = createTRPCRouter({
           eq(posts.userId, input.userId),
           eq(posts.date, input.postDate)
         ),
-        with: {
-          symbols: true,
-        },
       })
     }),
 })
